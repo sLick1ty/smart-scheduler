@@ -11,6 +11,11 @@ def add_exam():
     time = input('Exam time: ')
     room = input('Exam room: ')
 
+    for exam in exams.values():
+        if exam['date'] == date and exam['time'] == time:
+            print('\nConflict in scheduling detected. Please choose another time and date.\n')
+            return
+    
     exams[examnum] = {
         'name': name,
         'date': date,
